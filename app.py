@@ -10,14 +10,17 @@ app = Flask(__name__)
 # Start OCR model
 ocr_engine = start_paddle_ocr()
 
-# Check if API key is available
-validate_openai_api_key()
-
 print("Ready to receive requests")
 
 @app.post("/parse")
 def parse_invoice():
     """Ingests a pdf or image of an invoice and parses the data."""
+
+    # Check if API key is available
+    api_output = validate_openai_api_key()
+    if 'status' in api_output[0] and api_output[0]['status'] == "error":
+        return api_output
+
     output = {}, 500
     try:
         # Parse request
