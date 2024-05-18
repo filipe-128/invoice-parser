@@ -29,15 +29,17 @@ Create a .env file in the root directory of the project and add your OpenAI API 
 ## Usage
 
 1. Place the invoice images in the `docs` folder. Available formats are .pdf, .png and .jpg.
+
 2. Run the main application with filepath argument:
    ```sh
    python main.py --filepath "docs/example.png"
    ```
+
 3. Extracted data will be displayed in a JSON format.
 
 ## Configuration
 
-- Modify `config.yaml` to change the temporary folder directory or the OpenAI model to use. Available models are listed [https://platform.openai.com/docs/models](here).
+- Modify `config.yaml` to change the temporary folder directory or the OpenAI model to use. Available models are listed [here](https://platform.openai.com/docs/models).
 
 ## Contributing
 
