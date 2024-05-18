@@ -23,7 +23,7 @@ Invoice Parser is a Python-based application designed to extract and process inf
 3. Set up environment variables:
 Create a .env file in the root directory of the project and add your OpenAI API key:
    ```sh
-   OPENAPI_KEY=your-api-key-here
+   OPENAI_API_KEY=your-api-key-here
    ```
 
 ## Usage
@@ -37,7 +37,7 @@ Create a .env file in the root directory of the project and add your OpenAI API 
 
 ## Configuration
 
-- Modify `config.yaml` to change the temporary folder directory or the OpenAI model.
+- Modify `config.yaml` to change the temporary folder directory or the OpenAI model to use. Available models are listed [https://platform.openai.com/docs/models](here).
 
 ## Contributing
 
