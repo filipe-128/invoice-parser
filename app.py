@@ -18,8 +18,9 @@ def parse_invoice():
 
     # Check if API key is available
     api_output = validate_openai_api_key()
-    if 'status' in api_output[0] and api_output[0]['status'] == "error":
-        return api_output
+    if api_output is not True:
+        if 'status' in api_output[0] and api_output[0]['status'] == "error":
+            return api_output
 
     output = {}, 500
     try:

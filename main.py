@@ -17,9 +17,10 @@ if __name__ == "__main__":
 
     # Check if API key is available
     api_output = validate_openai_api_key()
-    if 'status' in api_output[0] and api_output[0]['status'] == "error":
-        print(api_output)
-        sys.exit(0)
+    if api_output is not True:
+        if 'status' in api_output[0] and api_output[0]['status'] == "error":
+            print(api_output)
+            sys.exit(0)
 
     OUTPUT = invoice_parser_chain({'filepath': args.filepath}, ocr_engine)
     print(OUTPUT)
